@@ -1,31 +1,58 @@
+     
+     
+      
+     /* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  color: white;
+  padding: 10px 20px;
+}
+
+.menu u {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.botoes button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.botaologin {
+  background-color: #fff;
+  color: #111;
+}
+
+.botaocadastro {
+  background-color: #3700ff;
+  color: white;
+}
      /* -------HEADER------- */
 
-     body {
-         margin: 0;
-         background-image: url("../assets/background.png");
-         width: 100%;
-         height: 740px;
-         background-size: 100%;
-     }
-
-     .cadastro {
-         width: 100%;
-         height: 712px;
-         background-size: 100%;
-     }
-
-
-     #login {
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         color: #110f0f;
-         background-color: #ffffff;
-         border-radius: 7px;
-         height: 28px;
-         width: 80px;
-         border: #DCAB20 solid 3px;
-     }
+    body {
+        margin: 0;
+        background: url(./assets/nissan-gtr-3840-x-2160-5o4yz41agcl8j301.webp);
+        width: 100%;
+        height: 700px;
+        background-size: 100%;
+    }
 
      /* -----Balão de Cadastro------*/
 
@@ -34,11 +61,12 @@
          justify-content: center;
          align-items: center;
          color: aliceblue;
-         height: auto;
+         height: 94%;
+         flex: 1;
      }
 
      .card {
-         background-color: #2a1110f8;
+         background-color: #3700ff;
          display: flex;
          flex-direction: column;
          justify-content: center;
@@ -63,11 +91,12 @@
      .card-campo input {
          width: 100%;
          padding: 10px;
-         font-size: 14px;
+         font-size: 16px;
+         font-weight: 510;
          border-radius: 4px;
          box-sizing: border-box;
          border: 0;
-         border-bottom: 2px solid rgb(200, 200, 200);
+         border-bottom: 2px solid rgb(255, 255, 255);
          background-color: transparent;
          color: #ffffff;
          transition: 0.5s ease-in-out;
@@ -101,13 +130,13 @@
      }
 
      button {
-         background-color: #DCAB20;
-         width: 135px;
+         background-color: #ffffff;
+         width: 180px;
          height: 36px;
          border: none;
          border-radius: 5px;
          font-size: 16px;
          font-weight: 600;
-         color: #ffffff;
+         color: #3700ff;
          opacity: 100%;
      }

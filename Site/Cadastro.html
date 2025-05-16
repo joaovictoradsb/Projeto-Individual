@@ -1,65 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <!-- Header -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/assets/main.css">
-    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="stylesheet" href="./Cadastro.css">
+    
 
-    <title>Cadastro - Monibeer</title>
+    <title>Cadastro - Carmax</title>
 </head>
 
 <body>
-    <div class="cadastro">
-        <div class="header">
-            <div class="container">
-                <a href="./index.html">
-                    <img src="./assets/monibeer-logo.png" alt="Logo Monibeer">
-                </a>
-                <div class="navbar">
-                    <ul class="menu-center">
-                        <li><a id="home" href="./index.html">Home</a></li>
-                        <li><a href="./index.html">Sobre Nós</a></li>
-                        <li><a href="simulador.html">Simulador</a></li>
-                    </ul>
-                    <ul class="menu-right">
-                        <li><a id="login" href="login.html">Login</a></li>
-                        <li><a id="cadastro" href="cadastro.html">Cadastro</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
+    
+<div class="navbar">
+    
+      <img src="assets/Logo Site.png" height="50px" alt="" />
+      <div class="menu">
+        <u>
+          <a href=""><li>Velozes e Furiosos</li></a>
+          <a href=""><li>Carros</li></a>
+          <a href=""><li>Curiosidades</li></a>
+        </u>
+      </div>
+      <div class="botoes">
+        <button class="botaologin" onclick="login()">Login</button>
+        <button class="botaocadastro" onclick="cadastro()">Cadastre-se</button>
+      </div>
+    </div>
         <!-- Container com os dados informados -->
 
 
         <div class="container-cadastro">
             <div class="card"> <!-- estou criando aqui o balão de cadastro -->
-                <h2>Cadastre Sua Empresa</h2>
+                <h2>Cadastre - se</h2>
                 <br><br>
                 <div class="card-campo">
                     <div class="campo">
-                        <span>Razão Social</span>
+                        <span>Nome</span>
                         <br><br>
                         <input type="text" id="input_nome"> <br><br><br>
                     </div>
                     <div class="campo">
-                        <span>E-mail*</span>
+                        <span>E-mail</span>
                         <br><br>
                         <input type="text" id="input_email"> <br><br><br>
                     </div>
                     <div class="campo">
-                        <span>CNPJ*</span>
+                        <span>Senha</span>
                         <br><br>
-                        <input type="number" id="input_cnpj"> <br><br><br>
+                        <input type="password" id="input_senha"> <br><br><br>
                     </div>
                     <div class="campo">
-                        <span>Telefone*</span>
+                        <span>Confirmar Senha</span>
                         <br><br>
-                        <input type="number" id="input_telefone"> <br><br><br>
+                        <input type="password" id="input_confirmar_senha"> <br><br><br>
+                        <div id="mensagem_erro"></div>
                     </div>
                     <!-- <div class="campo">
                         <span> Cadastrar Senha:*</span>
@@ -88,22 +84,27 @@
 
         var nome = input_nome.value;
         var email = input_email.value;
-        var cnpj = input_cnpj.value;
-        var telefone = input_telefone.value;
+        var senha = input_senha.value;
+        var confirmar_senha = input_confirmar_senha.value;
         // var senha = input_senha.value;
 
-        if (email == "" || cnpj == "" || telefone == "") {
+        if (nome == "" || email == "" || senha == "" || confirmar_senha == "") {
             alert(`Preencha todos os campos obrigatórios`)
 
         } else if (!email.includes("@")) {
             alert(`Preencha um E-mail válido`)
 
-        } else {
-            alert(`Cadastro de Empresa - Realizado com Sucesso!`)
+        }else if(senha != confirmar_senha){
 
-            window.location.href = "./cadastro-usuario.html"; //faz a navegação automática
+           mensagem_erro.innerHTML += `As senhas não coincidem`
+
+        }else {
+            alert(`Cadastro - Realizado!`)
+
+            window.location.href = "./login.html"; //faz a navegação automática
 
         }
     }
 
 </script>
+<div id="mensagem_erro" style="b"></div>

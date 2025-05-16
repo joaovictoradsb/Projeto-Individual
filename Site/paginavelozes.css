@@ -1,0 +1,74 @@
+body{
+margin: 0;
+background-color: #1B2046
+
+}
+
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  color: white;
+  padding: 10px 20px;
+}
+
+.menu u {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.botoes button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.botaologin {
+  background-color: #fff;
+  color: #111;
+}
+
+.botaocadastro {
+  background-color: #3700ff;
+  color: white;
+}
+/* ----------------------------------- */
+
+.home{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.configIMG{
+
+display: flex;
+justify-content: center;
+height: 670px;
+
+
+
+}.Filmes{
+
+display: flex;
+justify-content: center;
+color: white;
+font-size: 45px;
+
+}
