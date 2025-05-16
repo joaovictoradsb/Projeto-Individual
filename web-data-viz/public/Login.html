@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-     <div class="navbar">
+     
+<!-- Header -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="./css/login.css">
+  <title>Login - Carmax</title>
+</head>
+
+    <!-- Container com os dados informados -->
+<body>
+  </head>
+    <div class="navbar">
       <img src="assets/Logo Site.png" height="50px" alt="" />
       <div class="menu">
         <u>
@@ -14,16 +27,7 @@
         <button class="botaocadastro" onclick="cadastro()">Cadastre-se</button>
       </div>
     </div>
-<!-- Header -->
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="./login.css">
-  <title>Login - Carmax</title>
-</head>
-
-    <!-- Container com os dados informados -->
 
     <div class="container-login">
       <div class="card">
@@ -34,7 +38,7 @@
           <form id="formLogin">
             <div class="campo"></div>
             <div class="campo">
-              <span>Email Corporativo</span>
+              <span>Email </span>
               <br /><br />
               <input type="text" id="input_email" /> <br /><br /><br />
             </div>
@@ -67,8 +71,6 @@
 
     var email = input_email.value;
     var senha = input_senha.value;
-    var emaillogin = 'rodrigo@hotmail.com';
-    var emailsenha = "monibeer";
 
     if (email == "" || senha == "") {
       alert(`Preencha todos os campos obrigatórios`);
@@ -76,7 +78,7 @@
       alert(`Preencha com um email válido válida`);
     } else if (email == emaillogin && senha == emailsenha) {
       window.location.href = "index-dashboard.html"; // Faz a navegação automática
-    } else {
+    }else {
       div_mensagemerro.innerHTML = `<span style="color: red;">Matrícula ou Senha incorretos!</span>`;
     }
   }

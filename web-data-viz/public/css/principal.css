@@ -18,8 +18,12 @@ body {
 
 
 }
+a{
 
-/* Navbar */
+text-decoration: none;
+
+}
+ /* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -29,14 +33,13 @@ body {
   padding: 10px 20px;
 }
 
-.menu u {
+.menu ul {
   list-style-type: none;
   display: flex;
   gap: 20px;
 }
 
 .menu a {
-  text-decoration: none;
   color: white;
 }
 
@@ -45,7 +48,7 @@ body {
   cursor: pointer;
 }
 
-.botoes button {
+.botoes a {
   margin-left: 10px;
   padding: 8px 16px;
   cursor: pointer;
@@ -59,7 +62,7 @@ body {
 }
 
 .botaocadastro {
-  background-color: #3700ff;
+ background-color: #160160e8;
   color: white;
 }
 
@@ -67,7 +70,7 @@ body {
 
 .sec_1 {
   height: 110vh;
-  background-image: url(./assets/pexels-wearelivingart-8960870.jpg);
+  background-image: url(../assets/pexels-wearelivingart-8960870.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 566px;
