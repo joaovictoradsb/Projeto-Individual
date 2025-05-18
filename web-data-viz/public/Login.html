@@ -1,85 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-     
-<!-- Header -->
 
 <head>
+  <!-- Header -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="./css/login.css">
+  <link rel="stylesheet" href="./css/login.css">
   <title>Login - Carmax</title>
 </head>
 
-    <!-- Container com os dados informados -->
 <body>
-  </head>
-    <div class="navbar">
-      <img src="assets/Logo Site.png" height="50px" alt="" />
-      <div class="menu">
-        <u>
-          <a href=""><li>Velozes e Furiosos</li></a>
-          <a href=""><li>Carros</li></a>
-          <a href=""><li>Curiosidades</li></a>
-        </u>
-      </div>
-      <div class="botoes">
-        <button class="botaologin" onclick="login()">Login</button>
-        <button class="botaocadastro" onclick="cadastro()">Cadastre-se</button>
-      </div>
-    </div>
-<head>
 
-    <div class="container-login">
-      <div class="card">
-        <!-- estou criando aqui o balão de cadastro -->
-        <h2>Login</h2>
-        <br /><br />
-        <div class="card-campo">
-          <form id="formLogin">
-            <div class="campo"></div>
-            <div class="campo">
-              <span>Email </span>
-              <br /><br />
-              <input type="text" id="input_email" /> <br /><br /><br />
-            </div>
-            <div class="campo"></div>
-            <div class="campo"></div>
-            <div class="campo">
-              <span>Senha</span>
-              <br /><br />
-              <input type="password" id="input_senha" /> <br /><br /><br />
-            </div>
-            <div id="div_mensagemerro"></div>
-            <div class="campo"></div>
-            <div class="confbotao">
-              <button onclick="analisar(event)" class="botao">Login</button>
-            </div>
-          </form>
-        </div>
+  <!-- Navbar -->
+  <div class="navbar">
+    <img src="assets/Logo Site.png" height="50px" alt="Logo do site" />
+    <div class="menu">
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Velozes e Furiosos</a></li>
+        <li><a href="">Carros</a></li>
+      </ul>
+    </div>
+    <div class="botoes">
+      <a class="botaologin" href="Login.html">Login</a>
+      <a class="botaocadastro" href="Cadastro.html">Cadastre-se</a>
+    </div>
+  </div>
+
+  <!-- Login Container -->
+  <div class="container-login">
+    <div class="card">
+      <!-- Balão de login -->
+      <h2>Login</h2>
+      <br /><br />
+      <div class="card-campo">
+        <form id="formLogin">
+          <div class="campo">
+            <span>Email</span>
+            <br /><br />
+            <input type="text" id="input_email" />
+            <br /><br /><br />
+          </div>
+
+          <div class="campo">
+            <span>Senha</span>
+            <br /><br />
+            <input type="password" id="input_senha" />
+            <br /><br /><br />
+          </div>
+
+          <div id="div_mensagemerro"></div>
+
+          <div class="confbotao">
+            <button onclick="analisar(event)" class="botao">Login</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+
   <div id="div_mensagem"></div>
+
+  <!-- JavaScript -->
+  <script>
+    function analisar(event) {
+      event.preventDefault(); // Impede o recarregamento da página
+
+      var email = input_email.value;
+      var senha = input_senha.value;
+
+      if (email === "" || senha === "") {
+        alert(`Preencha todos os campos obrigatórios`);
+      } else if (!email.includes("@")) {
+        alert(`Preencha com um email válido`);
+      } else if (email === emaillogin && senha === emailsenha) {
+        window.location.href = "index-dashboard.html";
+      } else {
+        div_mensagemerro.innerHTML = `<span style="color: red;">Matrícula ou Senha incorretos!</span>`;
+      }
+    }
+  </script>
+
 </body>
 
 </html>
-
-<!-- JAVA SCRIPT -->
-<script>
-  function analisar(event) {
-    event.preventDefault(); // Impede o recarregamento da página
-
-    var email = input_email.value;
-    var senha = input_senha.value;
-
-    if (email == "" || senha == "") {
-      alert(`Preencha todos os campos obrigatórios`);
-    } else if (!email.includes("@")) {
-      alert(`Preencha com um email válido válida`);
-    } else if (email == emaillogin && senha == emailsenha) {
-      window.location.href = "index-dashboard.html"; // Faz a navegação automática
-    }else {
-      div_mensagemerro.innerHTML = `<span style="color: red;">Matrícula ou Senha incorretos!</span>`;
-    }
-  }
-</script>

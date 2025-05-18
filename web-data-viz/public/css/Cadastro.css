@@ -1,37 +1,40 @@
-     
-    
-     /* Navbar */
+/* ------ Reset e base ------ */
+body {
+  margin: 0;
+  background: url(../assets/nissan-gtr-3840-x-2160-5o4yz41agcl8j301.webp);
+  background-size: cover;
+  background-position: center;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+/* ------ Links ------ */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ------ Navbar ------ */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #111;
-  color: white;
   padding: 10px 20px;
 }
 
-.menu u {
-  list-style-type: none;
+.menu ul {
+  list-style: none;
   display: flex;
   gap: 20px;
 }
 
-.menu a {
-  text-decoration: none;
-  color: white;
-}
-
-.menu li {
-  list-style: none;
-  cursor: pointer;
-}
-
-.botoes button {
+.botoes a {
   margin-left: 10px;
   padding: 8px 16px;
   cursor: pointer;
-  border: none;
   border-radius: 4px;
+  border: none;
 }
 
 .botaologin {
@@ -40,102 +43,88 @@
 }
 
 .botaocadastro {
- background-color: #160160e8;
+  background-color: #160160e8;
   color: white;
 }
-     /* -------HEADER------- */
 
-    body {
-        margin: 0;
-        background: url(../assets/nissan-gtr-3840-x-2160-5o4yz41agcl8j301.webp);
-        width: 100%;
-        height: 700px;
-        background-size: 100%;
-    }
+/* ------ Cadastro Container ------ */
+.container-cadastro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  
+}
 
-     /* -----Balão de Cadastro------*/
+/* ------ Card de Cadastro ------ */
+.card {
+  background-color: #160160e8;
+  padding: 40px 100px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
-     .container-cadastro {
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         color: aliceblue;
-         height: 94%;
-         flex: 1;
-     }
+/* Título */
+.card h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
 
-     .card {
-         background-color: #160160e8;
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
-         width: 36%;
-         border-radius: 10px;
-         padding: 10px;
-         line-height: 0;
-     }
+/* Campo de Formulário */
+.card-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-     .card .card-campo {
-         display: flex;
-         flex-direction: column;
-         width: auto;
-         padding: 60px;
-         padding-bottom: 20px;
-         padding-top: 0px;
-         line-height: 0.4;
-     }
+.campo span {
+  display: block;
+  font-weight: 550;
+  margin-bottom: 6px;
+}
 
+.card-campo input {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: 2px solid #fff;
+  transition: border-color 0.3s ease-in-out;
+}
 
-     /*------Configuração das input(campos)-----*/
-     .card-campo input {
-         width: 100%;
-         padding: 10px;
-         font-size: 16px;
-         font-weight: 510;
-         border-radius: 4px;
-         box-sizing: border-box;
-         border: 0;
-         border-bottom: 2px solid rgb(255, 255, 255);
-         background-color: transparent;
-         color: #ffffff;
-         transition: 0.5s ease-in-out;
-     }
+.card-campo input:focus {
+  outline: none;
+  border-bottom-color: #c0c0c0;
+}
 
-     .card-campo .campo {
-         width: 100%;
-     }
+/* Botão */
+.confbotao {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 
-     .card h2 {
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         color: #ffffff;
-         font-weight: 560;
-         font-size: 26px;
-         line-height: 3.4;
-     }
+.confbotao button {
+  background-color: #ffffff;
+  color: #3700ff;
+  font-weight: 600;
+  font-size: 16px;
+  width: 180px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-     span {
-         font-weight: 550;
-     }
-
-
-     /* ---- Configuração Botão de Cadastro -------*/
-     .confbotao {
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         padding-top: 30px;
-     }
-
-    .confbotao button {
-         background-color: #ffffff;
-         width: 180px;
-         height: 36px;
-         border: none;
-         border-radius: 5px;
-         font-size: 16px;
-         font-weight: 600;
-         color: #3700ff;
-         opacity: 100%;
-     }
+/* Responsividade */
+@media (max-width: 600px) {
+  .card {
+    padding: 30px 20px;
+  }
+}
