@@ -22,6 +22,9 @@ body {
     color: var(--new-black);
     background-color: var(--new-white);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    background-image: url(../assets/nissan-gtr-3840-x-2160-5o4yz41agcl8j301.webp);
+    background-size: cover;
 }
 
 button {
@@ -71,4 +74,26 @@ button {
 
 .text-new-gray {
     color: var(--new-gray);
+}.botaoiniciar{
+
+height: 712px;
+width: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+
+
+
+}#btnIniciarQuiz{
+
+height: 170px;
+width: 420px;
+background-color: blue;
+color: white;
+font-size: 25px;
+
+
+
 }
