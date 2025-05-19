@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-  <!-- Header -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/login.css">
@@ -27,57 +26,89 @@
     </div>
   </div>
 
-  <!-- Login Container -->
+  <!-- Container de Login -->
   <div class="container-login">
     <div class="card">
-      <!-- Balão de login -->
-      <h2>Login</h2>
-      <br /><br />
-      <div class="card-campo">
-        <form id="formLogin">
-          <div class="campo">
-            <span>Email</span>
-            <br /><br />
-            <input type="text" id="input_email" />
-            <br /><br /><br />
-          </div>
+      <h2>Login</h2><br /><br />
+      <form id="formLogin" onsubmit="return entrar(event)">
+        <div class="campo">
+          <span>Email</span><br /><br />
+          <input type="text" id="email_input" /><br /><br /><br />
+        </div>
 
-          <div class="campo">
-            <span>Senha</span>
-            <br /><br />
-            <input type="password" id="input_senha" />
-            <br /><br /><br />
-          </div>
+        <div class="campo">
+          <span>Senha</span><br /><br />
+          <input type="password" id="senha_input" /><br /><br /><br />
+        </div>
 
-          <div id="div_mensagemerro"></div>
+        <div id="div_mensagemerro" style="color: red;"></div>
 
-          <div class="confbotao">
-            <button onclick="analisar(event)" class="botao">Login</button>
-          </div>
-        </form>
-      </div>
+        <div class="confbotao">
+          <button type="submit" class="botao">Login</button>
+        </div>
+      </form>
     </div>
   </div>
 
-  <div id="div_mensagem"></div>
+  <!-- Elementos esperados pelo sessao.js -->
+  <div id="div_aguardar" style="display: none; position: fixed; top: 10px; left: 10px; background-color: yellow; padding: 10px;">
+    Carregando...
+  </div>
 
-  <!-- JavaScript -->
+  <div id="div_erros_login" style="display: none; color: red;"></div>
+
+  <!-- SCRIPTS -->
+  <script src="/js/sessao.js"></script>
   <script>
-    function analisar(event) {
-      event.preventDefault(); // Impede o recarregamento da página
+    function entrar(event) {
+      event.preventDefault();
+      aguardar();
 
-      var email = input_email.value;
-      var senha = input_senha.value;
+      var emailVar = email_input.value;
+      var senhaVar = senha_input.value;
 
-      if (email === "" || senha === "") {
-        alert(`Preencha todos os campos obrigatórios`);
-      } else if (!email.includes("@")) {
-        alert(`Preencha com um email válido`);
-      } else if (email === emaillogin && senha === emailsenha) {
-        window.location.href = "index-dashboard.html";
-      } else {
-        div_mensagemerro.innerHTML = `<span style="color: red;">Matrícula ou Senha incorretos!</span>`;
+      var cardErro = document.getElementById("div_mensagemerro");
+
+      if (emailVar === "" || senhaVar === "") {
+        cardErro.innerHTML = "Preencha todos os campos!";
+        finalizarAguardar("Campos obrigatórios vazios.");
+        return false;
       }
+
+      console.log("FORM LOGIN:", emailVar, senhaVar);
+
+      fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          emailServer: emailVar,
+          senhaServer: senhaVar
+        })
+      }).then(function (resposta) {
+        if (resposta.ok) {
+          resposta.json().then(json => {
+            console.log(json);
+            sessionStorage.EMAIL_USUARIO = json.email;
+            sessionStorage.NOME_USUARIO = json.nome;
+            sessionStorage.ID_USUARIO = json.id;
+
+            setTimeout(function () {
+              window.location = "../Quiz.html";
+            }, 1000);
+          });
+        } else {
+          resposta.text().then(texto => {
+            finalizarAguardar(texto);
+          });
+        }
+      }).catch(function (erro) {
+        console.error("Erro na requisição:", erro);
+        finalizarAguardar("Erro de comunicação com o servidor.");
+      });
+
+      return false;
     }
   </script>
 
