@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +9,7 @@
 
 body {
   
-  background-color: blueviolet;
+  background-color: #02188A;
   color: white;
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
@@ -72,11 +75,68 @@ height: 670px;
 
 
 
-}.Filmes{
+}.filme1{
 
 display: flex;
 justify-content: center;
 color: white;
 font-size: 45px;
+margin: 20px;
+
+}.velozesefuriosos1{
+
+background-color: #031545;
+margin: 20px;
+border: solid;
+border-color: black;
+
+
+}.textogeral1{
+
+margin: 35px;
+
+
+}.textofilme1{
+
+font-size: 30px;
+
+
+}.imagem1{
+
+border: solid;
+border-color: gray;
+
+
+}
+.footer{
+
+height: 215px;
+width: auto;
+background-color: #001EFF ;
+display: flex;
+flex-direction: column;
+align-items: center;
+font-size: 17px;
+
+}
+.footer h1{
+
+margin: 20;  
+color: #190500;
+
+
+}
+.footer h2{
+
+margin: 0;
+color:#190500 ;
+
+
+}
+.copy{
+
+display: flex;
+justify-content: center;
+color: #131F24;
 
 }
