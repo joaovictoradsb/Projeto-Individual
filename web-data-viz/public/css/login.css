@@ -10,7 +10,7 @@
 }
 
 body {
-  background: url(../assets/nissan-gtr-2560-x-1600-nmuj63kehfpifsl7.webp) no-repeat center center fixed;
+  background: url(../assets/carro-de-anime-na-cidade.jpg) no-repeat center center fixed;
   background-size: cover;
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -76,12 +76,12 @@ a {
 .card {
   background-color: #160160e8;
   border-radius: 10px;
-  padding: 40px;
+  padding: 60px;
   width: 100%;
-  max-width: 600px;
+  max-width: 660px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Isso centraliza o conteúdo horizontalmente */
+  align-items: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -107,8 +107,8 @@ a {
 .card .card-campo {
   display: flex;
   flex-direction: column;
-  width: 100%;            /* Faz os inputs ocuparem a largura do card */
-  max-width: 400px;       /* Limita a largura máxima para não estourar */
+  width: 100%;
+  max-width: 400px;
   gap: 20px;
 }
 
@@ -125,7 +125,21 @@ a {
   display: flex;
   flex-direction: column;
   gap: 15px;
-}
+  }#email_input{
+
+    height: 38px;
+    width: 430px;
+    font-size: 15px;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-bottom: 2px solid #fff;
+    transition: border-color 0.3s ease-in-out;
+
+
+  }
+
 
 .card-campo input {
   padding: 10px;
@@ -136,6 +150,21 @@ a {
   background-color: transparent;
   color: #ffffff;
   transition: border-color 0.3s ease-in-out;
+}#senha_input{
+
+width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-bottom: 2px solid #fff;
+    transition: border-color 0.3s ease-in-out;
+
+
+
+
 }
 
 .card-campo input:focus {
