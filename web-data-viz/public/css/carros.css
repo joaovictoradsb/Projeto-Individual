@@ -56,3 +56,81 @@ a {
   background-color: #160160e8;
   color: white;
 }
+
+/* --------------------------------------------------- */
+
+.homecarros{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.configIMGcarros{
+
+display: flex;
+justify-content: center;
+height: 660px;
+padding: 130px;
+
+
+
+}.filme1carros{
+
+display: flex;
+justify-content: center;
+color: white;
+font-size: 45px;
+margin: 20px;
+
+
+}
+/* ------------------------------------------------- */
+
+
+.home{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.configIMG{
+
+display: flex;
+justify-content: center;
+height: 670px;
+
+
+
+}.filme1{
+
+display: flex;
+justify-content: center;
+color: white;
+font-size: 45px;
+margin: 20px;
+
+}.velozesefuriosos1{
+
+background-color: #031545;
+margin: 20px;
+border: solid;
+border-color: black;
+
+
+}.textogeral1{
+
+margin: 35px;
+
+
+}.textofilme1{
+
+font-size: 30px;
+
+
+}.imagem1{
+
+border: solid;
+border-color: gray;
+
+
+}
