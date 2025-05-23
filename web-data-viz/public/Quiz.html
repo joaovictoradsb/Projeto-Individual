@@ -7,32 +7,33 @@
     <link rel="stylesheet" href="./css/quiz.css" />
   </head>
 
-
+  
   <body onload="onloadEsconder()">
     <div class="botaoiniciar">
-    <div id="pontuacaoEJogo">
-      <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
+      <div id="pontuacaoEJogo">
+        <button id="btnIniciarQuiz" onclick="iniciarQuiz()">INICIAR QUIZ</button>
+        <div class="pontuacao_arrumar">
       </div>
-
-      <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
-        <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
-          <span class="width-fit-content"
+        <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
+          <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
+            <span class="width-fit-content"
             >Quantidade de acertos: <span id="spanCertas"></span
-          ></span>
-          <span class="width-fit-content"
-            >Quantidade de erros: <span id="spanErradas"></span
-          ></span>
+              ></span>
+              <span class="width-fit-content"
+              >Quantidade de erros: <span id="spanErradas"></span
+                ></span>
+              </div>
+              <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
+                <span id="pontuacaoFinal" class="width-fit-content"
+                >Pontuação Final:
+                <span id="spanPontuacaoFinal">***</span>
+              </span>
+              <span id="msgFinal" class="width-fit-content">***</span>
+            </div>
+          </div>
         </div>
-        <div id="pontuacaoFinalJogo" class="flex-colunar padding-8">
-          <span id="pontuacaoFinal" class="width-fit-content"
-            >Pontuação Final:
-            <span id="spanPontuacaoFinal">***</span>
-          </span>
-          <span id="msgFinal" class="width-fit-content">***</span>
-        </div>
-      </div>
-
-      <div id="jogo" class="width-fit-content flex-colunar border-secondary">
+          
+          <div id="jogo" class="width-fit-content flex-colunar border-secondary">
         <div id="infoQuestao" class="padding-8">
           <span
             >Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de
@@ -124,17 +125,6 @@
     // Questões Velozes e Furiosos
 
     // 1
-    {
-      pergunta:
-        "Qual é o nome do personagem principal interpretado por Vin Diesel?",
-      alternativaA: "Brian O’Conner",
-      alternativaB: "Roman Pearce",
-      alternativaC: "Dominic Toretto",
-      alternativaD: "Sean Boswell",
-      alternativaCorreta: "alternativaC",
-    },
-
-    // 2
 
     {
       pergunta: "Qual era a profissão de Brian O'Conner no primeiro filme?",
@@ -145,7 +135,7 @@
       alternativaCorreta: "alternativaD",
     },
 
-    // 3
+    // 2
 
     {
       pergunta: "Em qual filme Paul Walker fez sua última aparição?",
@@ -156,7 +146,7 @@
       alternativaCorreta: "alternativaA",
     },
 
-    // 4
+    // 3
 
     {
       pergunta:
@@ -168,7 +158,7 @@
       alternativaCorreta: "alternativaA",
     },
 
-    // 5
+    // 4
 
     {
       pergunta: "Quem é a irmã de Dominic Toretto?",
@@ -179,7 +169,7 @@
       alternativaCorreta: "alternativaB",
     },
 
-    // 6
+    // 5
 
     {
       pergunta: "Em Desafio em Tóquio, quem é o protagonista?",
@@ -190,7 +180,7 @@
       alternativaCorreta: "alternativaD",
     },
 
-    // 7
+    // 6
 
     {
       pergunta: "Qual é o verdadeiro nome do personagem Han?",
@@ -201,7 +191,7 @@
       alternativaCorreta: "alternativaD",
     },
 
-    // 8
+    // 7
 
     {
       pergunta:
@@ -213,7 +203,7 @@
       alternativaCorreta: "alternativaB",
     },
 
-    // 9
+    // 8
 
     {
       pergunta:
@@ -225,19 +215,8 @@
       alternativaCorreta: "alternativaD",
     },
 
-    // 10
 
-    {
-      pergunta:
-        "Em Velozes e Furiosos 9, quem é revelado como irmão de Dominic?",
-      alternativaA: "Brian",
-      alternativaB: "Roman",
-      alternativaC: "Jakob",
-      alternativaD: "Vince",
-      alternativaCorreta: "alternativaC",
-    },
-
-    // 11
+    // 9
 
     {
       pergunta: "Qual o lema repetido por Dominic Toretto?",
@@ -247,41 +226,7 @@
       alternativaD: "Nunca olhe para trás",
       alternativaCorreta: "alternativaA",
     },
-
-    // 12
-
-    {
-      pergunta: "Qual personagem morre em Velozes e Furiosos 6?",
-      alternativaA: "Letty",
-      alternativaB: "Mia",
-      alternativaC: "Gisele",
-      alternativaD: "Elena",
-      alternativaCorreta: "alternativaC",
-    },
-
-    // 13
-
-    {
-      pergunta: "Quem é o ator que interpreta Brian O’Conner?",
-      alternativaA: "Vin Diesel",
-      alternativaB: "Paul Walker",
-      alternativaC: "Jason Statham",
-      alternativaD: "Dwayne Johnson",
-      alternativaCorreta: "alternativaB",
-    },
-
-    // 14
-
-    {
-      pergunta: "Quem é o vilão em Velozes e Furiosos 8?",
-      alternativaA: "Deckard Shaw",
-      alternativaB: "Cipher",
-      alternativaC: "Owen Shaw",
-      alternativaD: "Jakob Toretto",
-      alternativaCorreta: "alternativaB",
-    },
-
-    // 15
+    // 10
 
     {
       pergunta: "Em qual filme a equipe rouba um cofre de um prédio?",
@@ -296,7 +241,7 @@
 
     // Pergunta Filme Carros
 
-    // 16
+    // 11
 
     {
       pergunta: "Qual é o nome do carro de corrida protagonista da franquia?",
@@ -307,7 +252,7 @@
       alternativaCorreta: "alternativaC",
     },
 
-    // 17
+    // 12
     {
       pergunta: "Qual é o número do Relâmpago McQueen?",
       alternativaA: "57",
@@ -317,7 +262,7 @@
       alternativaCorreta: "alternativaD",
     },
 
-    // 18
+    // 13
     {
       pergunta:
         "Qual é o nome da cidade onde McQueen acaba preso no primeiro filme?",
@@ -328,7 +273,7 @@
       alternativaCorreta: "alternativaB",
     },
 
-    // 19
+    // 14
 
     {
       pergunta: "Quem é o melhor amigo enferrujado de McQueen?",
@@ -339,7 +284,7 @@
       alternativaCorreta: "alternativaC",
     },
 
-    // 20
+    // 15
 
     {
       pergunta:
@@ -351,7 +296,7 @@
       alternativaCorreta: "alternativaB",
     },
 
-    // 21
+    // 16
 
     {
       pergunta: "Doc Hudson era famoso por qual título nas pistas?",
@@ -361,7 +306,7 @@
       alternativaD: "Senhor Radiador",
       alternativaCorreta: "alternativaC",
     },
-    // 22
+    // 17
 
     {
       pergunta: "Quem é a namorada de McQueen?",
@@ -372,7 +317,7 @@
       alternativaCorreta: "alternativaB",
     },
 
-    // 23
+    // 18
 
     {
       pergunta:
@@ -384,7 +329,7 @@
       alternativaCorreta: "alternativaC",
     },
 
-    // 24
+    // 19
     {
       pergunta: "Qual empresa de pneus aparece em toda a série?",
       alternativaA: "Lightyear",
@@ -394,7 +339,7 @@
       alternativaCorreta: "alternativaA",
     },
 
-    // 25
+    // 20
     {
       pergunta: "Quem é o carro espião britânico em 'Carros 2'?",
       alternativaA: "Chick Hicks",
@@ -402,59 +347,6 @@
       alternativaC: "Lewis Hamilton",
       alternativaD: "Finn McMissile",
       alternativaCorreta: "alternativaD",
-    },
-
-    // 26
-
-    {
-      pergunta: "Quem é o grande rival de McQueen no primeiro filme?",
-      alternativaA: "Jackson Storm",
-      alternativaB: "Francesco Bernoulli",
-      alternativaC: "Chick Hicks",
-      alternativaD: "Strip Weathers",
-      alternativaCorreta: "alternativaC",
-    },
-
-    // 27
-
-    {
-      pergunta: "Qual é o lema de McQueen?",
-      alternativaA: "Brrrum!",
-      alternativaB: "Ka-chow!",
-      alternativaC: "Zoom-Zoom",
-      alternativaD: "Acelera!",
-      alternativaCorreta: "alternativaB",
-    },
-
-    // 28
-
-    {
-      pergunta: "Qual empresa patrocinava McQueen antes da Rust-eze?",
-      alternativaA: "Dinoco",
-      alternativaB: "Turbo Max",
-      alternativaC: "Nenhuma",
-      alternativaD: "Octane Gain",
-      alternativaCorreta: "alternativaC",
-    },
-    // 29
-
-    {
-      pergunta: "Quem é a treinadora de McQueen em 'Carros 3'?",
-      alternativaA: "Sally",
-      alternativaB: "Natalie",
-      alternativaC: "Cruz Ramirez",
-      alternativaD: "Flo",
-      alternativaCorreta: "alternativaC",
-    },
-
-    // 30
-    {
-      pergunta: "Qual é o nome do rival high-tech de McQueen em 'Carros 3'?",
-      alternativaA: "Max Speed",
-      alternativaB: "Mate",
-      alternativaC: "Jackson Storm",
-      alternativaD: "Blaze Runner",
-      alternativaCorreta: "alternativaC",
     },
   ];
 
