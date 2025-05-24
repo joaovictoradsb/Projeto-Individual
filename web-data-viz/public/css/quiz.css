@@ -25,6 +25,10 @@ body {
     margin: 0;
     background-image: url(../assets/pexels-pixabay-248747.jpg);
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    gap: 135px;
 }
 
 button {
@@ -85,6 +89,14 @@ flex-direction: column;
 gap: 20px;
 
 
+}.container{
+
+display: flex;
+height: 729px;
+justify-content: center;
+flex-direction: column;
+
+
 
 
 
@@ -111,6 +123,11 @@ background-color: black;
 color: white;
 display: flex;
 align-items: center;
+padding: 20px;
 
 
+} .quizz{
+    display: flex;
+    justify-content: center;
+    width: 94%;
 }
