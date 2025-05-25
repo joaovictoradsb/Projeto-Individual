@@ -7,6 +7,37 @@
     <title>Exemplo - Quiz</title>
     <link rel="stylesheet" href="./css/quiz.css">
 </head>
+<div class="janela">
+        <div class="header-left">
+            <h1>Galo12</h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./Quiz.html">
+                    <h3>Quizz</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav">
+
+                <h3>Gráficos</h3>
+
+            </div>
+
+            
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        
+    </div>
+
 
 
 <body onload="onloadEsconder()">
@@ -60,6 +91,7 @@
     </div>
     </section>
     <div id="pontuacao" class="flex-colunar width-fit-content border-primary">
+      <div class="pontos">
             <div id="pontuacaoDuranteJogo" class="flex-colunar padding-8">
                 <span class="width-fit-content">Quantidade de acertos: <span id="spanCertas"></span></span>
                 <span class="width-fit-content">Quantidade de erros: <span id="spanErradas"></span></span>
@@ -70,6 +102,7 @@
                 </span>
                 <span id="msgFinal" class="width-fit-content">***</span>
             </div>
+        </div>
         </div>
 
 </body>
