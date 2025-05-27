@@ -213,21 +213,21 @@ border: solid;
 
 .btn-nav {
   width: 40%;
-  color: white;
-  background-color: #ffffff;
+  
+  background-color: #02188A;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 .btn-nav h3{
 
-color: #02188A;
+color: #ffffff;
 
 }
 
 .btn-nav-white {
   width: 40%;
-  background-color: #02188A;
+  background-color: #ffffff;
   
   border-radius: 5px;
   text-align: center;
@@ -235,7 +235,7 @@ color: #02188A;
 }
 
 .btn-nav-white h3 {
-  color: #ffffff;
+  color: #000000;
   padding: 0;
   margin: 0;
 }
