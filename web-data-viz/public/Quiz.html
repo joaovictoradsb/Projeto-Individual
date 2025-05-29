@@ -6,13 +6,11 @@
     <title>Exemplo - Quiz</title>
     <link rel="stylesheet" href="./css/quiz.css" />
 
-<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
-
-
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <div class="janela">
     <div class="header-left">
@@ -30,14 +28,13 @@
 
       <div class="btn-nav">
         <a href="./Dashboard.html">
-
-        <h3>Gráficos</h3>
+          <h3>Gráficos</h3>
         </a>
       </div>
 
       <div class="btn-logout" onclick="limparSessao()">
         <a href="Login.html">
-        <h3>Sair</h3>
+          <h3>Sair</h3>
         </a>
       </div>
     </div>
@@ -170,8 +167,7 @@
   </body>
 </html>
 <script>
-b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
   const listaDeQuestoes = [
     // Questões Velozes e Furiosos
@@ -494,6 +490,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
       alert("Atenção... a próxima é a ultima questão!");
       preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual);
     } else {
+      Resultadoquiz();
       finalizarJogo();
     }
     limparCoresBackgroundOpcoes();
@@ -603,5 +600,67 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     btnSubmeter.disabled = true;
     // btnConcluir.disabled = true
     btnTentarNovamente.disabled = false;
+  }
+
+  function Resultadoquiz() {
+    var idusuario = 1;
+    var resultadoVar = 20;
+
+    fetch(`/quiz/resultado/${idusuario}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        resultadoServer: resultadoVar,
+      }),
+    })
+      .then(function (resposta) {
+        console.log(resposta);
+        if (resposta.ok) {
+          console.log("Passou por aqui e deu certo");
+        } else {
+          throw "Deu errado a parada";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+    return false;
+  }
+
+  function guardar() {
+    // Enviando o valor da nova input
+    fetch("/quiz/guardar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        quizServer: idQuiz,
+        certasServer: certas,
+        erradasServer: erradas,
+        usuarioServer: idusuario,
+        contadorServer: contador,
+        porcentagemServer: arredondada,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          alert(
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login..."
+          );
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+    return false;
   }
 </script>

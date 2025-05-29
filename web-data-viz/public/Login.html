@@ -1,119 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <title>Login - Carmax</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/login.css">
-  <title>Login - Carmax</title>
-</head>
-
-<body>
-
-  <!-- Navbar -->
-  <div class="navbar">
-    <img src="assets/Logo Site.png" height="50px" alt="Logo do site" />
-    <div class="menu">
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./paginavelozes.html">Velozes e Furiosos</a></li>
-        <li><a href="./paginaCarros.html">Carros</a></li>
-      </ul>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <img src="assets/Logo Site.png" height="50px" alt="Logo do site" />
+      <div class="menu">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./paginavelozes.html">Velozes e Furiosos</a></li>
+          <li><a href="./paginaCarros.html">Carros</a></li>
+        </ul>
+      </div>
+      <div class="botoes">
+        <a class="botaologin" href="Login.html">Login</a>
+        <a class="botaocadastro" href="Cadastro.html">Cadastre-se</a>
+      </div>
     </div>
-    <div class="botoes">
-      <a class="botaologin" href="Login.html">Login</a>
-      <a class="botaocadastro" href="Cadastro.html">Cadastre-se</a>
+
+    <!-- Container de Login -->
+    <div class="container-login">
+      <div class="card">
+        <h2>Login</h2>
+        <br /><br />
+        <form id="formLogin" onsubmit="return entrar(event)">
+          <div class="campo">
+            <span>Email</span><br /><br />
+            <input type="text" id="email_input" /><br /><br /><br />
+          </div>
+
+          <div class="campo">
+            <span>Senha</span><br /><br />
+            <input type="password" id="senha_input" /><br /><br /><br />
+          </div>
+
+          <div id="div_mensagemerro" style="color: red"></div>
+
+          <div class="confbotao">
+            <button type="submit" class="botao">Login</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
 
-  <!-- Container de Login -->
-  <div class="container-login">
-    <div class="card">
-      <h2>Login</h2><br /><br />
-      <form id="formLogin" onsubmit="return entrar(event)">
-        <div class="campo">
-          <span>Email</span><br /><br />
-          <input type="text" id="email_input" /><br /><br /><br />
-        </div>
-
-        <div class="campo">
-          <span>Senha</span><br /><br />
-          <input type="password" id="senha_input" /><br /><br /><br />
-        </div>
-
-        <div id="div_mensagemerro" style="color: red;"></div>
-
-        <div class="confbotao">
-          <button type="submit" class="botao">Login</button>
-        </div>
-      </form>
+    <div class="carregamento">
+      <!-- Elementos esperados pelo sessao.js -->
+      <div
+        id="div_aguardar"
+        style="
+          display: none;
+          position: fixed;
+          top: 10px;
+          left: 10px;
+          background-color: yellow;
+          padding: 10px;
+        "
+      >
+        Carregando...
+      </div>
     </div>
-  </div>
 
-  <div class="carregamento">
-  <!-- Elementos esperados pelo sessao.js -->
-  <div id="div_aguardar" style="display: none; position: fixed; top: 10px; left: 10px; background-color: yellow; padding: 10px;">
-    Carregando...
-  </div>
-  </div>
+    <div id="div_erros_login" style="display: none; color: red"></div>
 
-  <div id="div_erros_login" style="display: none; color: red;"></div>
+    <!-- SCRIPTS -->
+    <script src="/js/sessao.js"></script>
+    <script>
+      function entrar(event) {
+        event.preventDefault();
+        aguardar();
 
-  <!-- SCRIPTS -->
-  <script src="/js/sessao.js"></script>
-  <script>
-    function entrar(event) {
-      event.preventDefault();
-      aguardar();
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
 
-      var emailVar = email_input.value;
-      var senhaVar = senha_input.value;
+        var cardErro = document.getElementById("div_mensagemerro");
 
-      var cardErro = document.getElementById("div_mensagemerro");
+        if (emailVar === "" || senhaVar === "") {
+          cardErro.innerHTML = "Preencha todos os campos!";
+          finalizarAguardar("Campos obrigatórios vazios.");
+          return false;
+        }
 
-      if (emailVar === "" || senhaVar === "") {
-        cardErro.innerHTML = "Preencha todos os campos!";
-        finalizarAguardar("Campos obrigatórios vazios.");
+        console.log("FORM LOGIN:", emailVar, senhaVar);
+
+        fetch("/usuarios/autenticar", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            emailServer: emailVar,
+            senhaServer: senhaVar,
+          }),
+        })
+          .then(function (resposta) {
+            if (resposta.ok) {
+              resposta.json().then((json) => {
+                console.log(json);
+                sessionStorage.EMAIL_USUARIO = json.email;
+                sessionStorage.NOME_USUARIO = json.nome;
+                sessionStorage.ID_USUARIO = json.idCadastro;
+
+                setTimeout(function () {
+                  window.location = "../Dashboard.html";
+                }, 1000);
+              });
+            } else {
+              resposta.text().then((texto) => {
+                finalizarAguardar(texto);
+              });
+            }
+          })
+          .catch(function (erro) {
+            console.error("Erro na requisição:", erro);
+            finalizarAguardar("Erro de comunicação com o servidor.");
+          });
+
         return false;
       }
-
-      console.log("FORM LOGIN:", emailVar, senhaVar);
-
-      fetch("/usuarios/autenticar", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          emailServer: emailVar,
-          senhaServer: senhaVar
-        })
-      }).then(function (resposta) {
-        if (resposta.ok) {
-          resposta.json().then(json => {
-            console.log(json);
-            sessionStorage.EMAIL_USUARIO = json.email;
-            sessionStorage.NOME_USUARIO = json.nome;
-            sessionStorage.ID_USUARIO = json.id;
-
-            setTimeout(function () {
-              window.location = "../Dashboard.html";
-            }, 1000);
-          });
-        } else {
-          resposta.text().then(texto => {
-            finalizarAguardar(texto);
-          });
-        }
-      }).catch(function (erro) {
-        console.error("Erro na requisição:", erro);
-        finalizarAguardar("Erro de comunicação com o servidor.");
-      });
-
-      return false;
-    }
-  </script>
-
-</body>
-
+    </script>
+  </body>
 </html>
