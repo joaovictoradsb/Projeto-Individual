@@ -1,62 +1,100 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
 
-/*
-comandos para mysql server
-*/
 
-CREATE DATABASE aquatech;
+CREATE DATABASE galo12;
 
-USE aquatech;
+USE galo12;
 
-CREATE TABLE empresa (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	razao_social VARCHAR(50),
-	cnpj CHAR(14),
-	codigo_ativacao VARCHAR(50)
-);
 
+-- Tabela de Usuários
 CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+    idUsuario INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(80) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+-- Tabela de Quizzes
+CREATE TABLE quiz (
+    idQuiz INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(100) NOT NULL,
+    fkUsuarioCriador INT NOT NULL,
+    dataCriacao DATE,
+    FOREIGN KEY (fkUsuarioCriador) REFERENCES usuario(idUsuario)
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+-- Tabela de Questões
+CREATE TABLE questao (
+    idQuestao INT PRIMARY KEY AUTO_INCREMENT,
+    enunciado VARCHAR(300) NOT NULL,
+    alternativaA VARCHAR(150) NOT NULL,
+    alternativaB VARCHAR(150) NOT NULL,
+    alternativaC VARCHAR(150) NOT NULL,
+    alternativaD VARCHAR(150) NOT NULL,
+    alternativaCorreta ENUM('alternativaA', 'alternativaB', 'alternativaC', 'alternativaD') NOT NULL,
+    categoria VARCHAR(50)
 );
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
+-- Tabela de Resultados (Respostas de Usuários por Questão)
+CREATE TABLE resultado (
+    idResultado INT PRIMARY KEY AUTO_INCREMENT,
+    fkUsuario INT NOT NULL,
+    fkQuestao INT NOT NULL,
+    respostaUsuario ENUM('alternativaA', 'alternativaB', 'alternativaC', 'alternativaD') NOT NULL,
+    dataResposta DATE,
+    FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario),
+    FOREIGN KEY (fkQuestao) REFERENCES questao(idQuestao)
 );
 
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 1', 'ED145B');
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 2', 'A1B2C3');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
-insert into aquario (descricao, fk_empresa) values ('Aquário de Peixe-dourado', 2);
+SELECT * FROM questao;
+
+INSERT INTO usuario (nome, email, senha)
+VALUES ('Admin', 'admin@email.com', '123456');
+
+-- Questões sobre Velozes e Furiosos
+INSERT INTO questao (enunciado, alternativaA, alternativaB, alternativaC, alternativaD, alternativaCorreta, categoria)
+VALUES 
+('Qual era a profissão de Brian O''Conner no primeiro filme?', 'Mecânico', 'Piloto de corrida', 'Criminoso procurado', 'Policial infiltrado', 'alternativaD', 'Velozes e Furiosos'),
+
+('Em qual filme Paul Walker fez sua última aparição?', 'Velozes e Furiosos 7', 'Velozes e Furiosos 6', 'Desafio em Tóquio', 'Velozes e Furiosos 8', 'alternativaA', 'Velozes e Furiosos'),
+
+('Qual carro Dominic Toretto dirige na corrida final do primeiro filme?', 'Dodge Charger R/T 1970', 'Toyota Supra', 'Nissan Skyline', 'Ford Mustang', 'alternativaA', 'Velozes e Furiosos'),
+
+('Quem é a irmã de Dominic Toretto?', 'Letty Ortiz', 'Mia Toretto', 'Elena Neves', 'Gisele Yashar', 'alternativaB', 'Velozes e Furiosos'),
+
+('Em Desafio em Tóquio, quem é o protagonista?', 'Brian O’Conner', 'Han Lue', 'Dominic Toretto', 'Sean Boswell', 'alternativaD', 'Velozes e Furiosos'),
+
+('Qual é o verdadeiro nome do personagem Han?', 'Han Park', 'Han Seoul', 'Han Kim', 'Han Lue', 'alternativaD', 'Velozes e Furiosos'),
+
+('Qual cidade serve de cenário para a maior parte do segundo filme?', 'Tóquio', 'Miami', 'Rio de Janeiro', 'Los Angeles', 'alternativaB', 'Velozes e Furiosos'),
+
+('Qual personagem se junta à equipe depois de ser agente da DSS?', 'Roman Pearce', 'Leon', 'Deckard Shaw', 'Luke Hobbs', 'alternativaD', 'Velozes e Furiosos'),
+
+('Qual o lema repetido por Dominic Toretto?', 'Família', 'Liberdade', 'Corrida é vida', 'Nunca olhe para trás', 'alternativaA', 'Velozes e Furiosos'),
+
+('Em qual filme a equipe rouba um cofre de um prédio?', 'Velozes e Furiosos 5', 'Velozes e Furiosos 7', 'Velozes e Furiosos 4', 'Velozes e Furiosos 6', 'alternativaA', 'Velozes e Furiosos'),
+
+('Qual é o nome do carro de corrida protagonista da franquia?', 'Finn McMissile', 'Cruz Ramirez', 'Relâmpago McQueen', 'Doc Hudson', 'alternativaC', 'Carros'),
+
+('Qual é o número do Relâmpago McQueen?', '57', '07', '10', '95', 'alternativaD', 'Carros'),
+
+('Qual é o nome da cidade onde McQueen acaba preso no primeiro filme?', 'Spark City', 'Radiator Springs', 'Thunder Hollow', 'Motoropolis', 'alternativaB', 'Carros'),
+
+('Quem é o melhor amigo enferrujado de McQueen?', 'Luigi', 'Guido', 'Mate', 'Fillmore', 'alternativaC', 'Carros'),
+
+('Qual é o nome do carro azul veterano que serve de mentor para McQueen?', 'Chick Hicks', 'Doc Hudson', 'Ramone', 'Sarge', 'alternativaB', 'Carros'),
+
+('Doc Hudson era famoso por qual título nas pistas?', 'O Fantasma Azul', 'Rei das Ruas', 'Hudson Hornet', 'Senhor Radiador', 'alternativaC', 'Carros'),
+
+('Quem é a namorada de McQueen?', 'Cruz', 'Sally', 'Lizzie', 'Flo', 'alternativaB', 'Carros'),
+
+('Em "Carros 2", McQueen participa de qual competição internacional?', 'Corrida das Nações', 'Copa Piston Global', 'Grand Prix Mundial', 'Corrida dos Campeões', 'alternativaC', 'Carros'),
+
+('Qual empresa de pneus aparece em toda a série?', 'Lightyear', 'Goodyear', 'Piston Tire', 'SpeedGrip', 'alternativaA', 'Carros'),
+
+('Quem é o carro espião britânico em "Carros 2"?', 'Chick Hicks', 'Francesco Bernoulli', 'Lewis Hamilton', 'Finn McMissile', 'alternativaD', 'Carros');
+
+
+
+
+
+

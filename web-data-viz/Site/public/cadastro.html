@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/imgs/logoFutBrain.svg" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/cadastro.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Cadastro</title>
+</head>
+<body>
+    <div class="cadastro">
+        <img src="assets/imgs/home.svg" id="home" onclick="window.location = 'index.html'">
+        <div class="logo">
+            <img src="assets/imgs/logoFutBrain.png">
+        </div>
+        <div class="form-cadastro">
+            <label>Nome</label>
+            <div class="input">
+                <input type="text" id="input_nome" placeholder="Eduardo">
+            </div>
+            <label>Usuário</label>
+            <div class="input">
+                <input type="text" id="input_user" placeholder="edu7">
+                <img src="assets/imgs/people.svg">
+            </div>
+            <label>Email</label>
+            <div class="input">
+                <input type="email" id="input_email" placeholder="email@gmail.com">
+                <img src="assets/imgs/mail.svg">
+            </div>
+            <label>Senha</label>
+            <div class="input">
+                <input type="password" id="input_senha" placeholder="********">
+                <img src="assets/imgs/olhoFechado.svg" id="olhoFechado" class="view" onclick="mostrarSenha()">
+                <img src="assets/imgs/olhoAberto.svg" id="olhoAberto" class="hide" onclick="mostrarSenha()">
+            </div>
+            <a href="login.html" id="logar">Já possui cadastro? Entre no site</a>
+            <button onclick="cadastrar()">Cadastrar</button>
+        </div>
+    </div>
+
+    <script src="assets/js/cadastro.js"></script>
+</body>
+</html>

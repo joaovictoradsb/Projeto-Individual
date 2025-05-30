@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/imgs/logoFutBrain.svg" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="login">
+        <img src="assets/imgs/home.svg" id="home" onclick="window.location = 'index.html'">
+        <div class="logo">
+            <img src="assets/imgs/logoFutBrain.png">
+        </div>
+        <div class="form-login">
+            <label for="input_email">Email ou Usuário</label>
+            <div class="input">
+                <input id="input_email" placeholder="Username">
+                <img src="assets/imgs/people.svg">
+            </div>
+            <label for="input_senha">Senha</label>
+            <div class="input">
+                <input type="password" id="input_senha" placeholder="********">
+                <img src="assets/imgs/olhoFechado.svg" onclick="mostrarSenha()" class="view" id="olhoFechado">
+                <img src="assets/imgs/olhoAberto.svg" onclick="mostrarSenha()" class="hide" id="olhoAberto">
+            </div>
+            <a href="cadastro.html" id="cadastrar">Não tem uma conta? Cadastre-se</a>
+            <button onclick="entrar()">Entrar</button>
+        </div>
+    </div>
+
+    <script src="assets/js/login.js"></script>
+</body>
+
+</html>
+

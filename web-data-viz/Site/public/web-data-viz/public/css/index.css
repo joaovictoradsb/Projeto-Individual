@@ -1,0 +1,259 @@
+/* Importando fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&family=Mohave:ital,wght@0,300..700;1,300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #02188A;
+  background-size: cover;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  padding: 10px 20px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li {
+  cursor: pointer;
+}
+
+.menu a {
+  color: white;
+}
+
+.botoes a {
+  margin-left: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.botaologin {
+  background-color: #160160e8;
+  color: #ffffff;
+}
+
+.botaocadastro {
+  background-color: #160160e8;
+  color: white;
+}
+
+/* Seção principal - Home */
+.sec_1 {
+  height: 566px;
+  background-image: url(../assets/carro-3d-com-cores-vibrantes.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sec_1 .balaocarro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 570px;
+  width: 90px;
+  margin-left: 650px;
+  opacity: 0.8;
+}
+
+.balaocarro h3 {
+  text-align: center;
+  border-radius: 20px;
+}
+
+.sec_1 h3 {
+  margin: 0;
+  background-color: rgba(21, 25, 98, 0.32);
+  font-size: 50px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Mohave", sans-serif;
+  height: 500px;
+  width: 590px;
+}
+
+/* Seção de apresentação */
+.sec_2 {
+  background-color: #02188A;
+  color: white; 
+  height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.sec_2 h3 {
+  margin: 0;
+}
+
+/* Velozes e Furiosos */
+.filme1 {
+  background-color: #031545;
+  margin: 35px;
+  border: solid 1px rgb(57, 48, 24);
+  font-family: "Mohave", sans-serif;
+}
+
+.capavef {
+  height: 580px;
+  width: 400px;
+}
+
+.textofilme1 {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.imagemfilme1 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.titulofilme1 {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  color: white;
+  font-weight: bold;
+  padding-left: 250px;
+}
+
+.textovef {
+  font-size: 30px;
+  margin: 25px;
+}
+
+/* Seção Carros */
+.textogalo12{
+
+font-family: "Alumni Sans", sans-serif;
+
+
+}
+
+.capacarros {
+  height: 595px;
+  width: 425px;
+}
+.imagemgalo12{
+
+display: flex;
+flex-direction: row-reverse;
+align-items: flex-start;
+margin: 20px;
+
+
+
+}
+
+.galo12ou24{
+
+height: 400px;
+width: auto;
+border: solid;
+border-color: black;
+
+
+}
+.textogalo12 p{
+
+font-size: 35px;
+
+
+}.filme2{
+
+background-color: #031545;
+  margin: 35px;
+  border: solid 1px rgb(255, 0, 0);
+  font-family: "Mohave", sans-serif;
+
+
+
+}.textofilme2{
+
+display: flex;
+align-items: center;
+
+
+
+}
+.containertextocarros{
+
+margin: 20px;
+
+
+}
+.titulofilme2{
+
+font-size: 50px;
+font-weight: bold;
+display: flex;
+justify-content: center;
+padding-right: 400px;
+
+}
+.textocar{
+
+font-size: 30px;
+
+
+}
+.footer{
+
+height: 215px;
+width: auto;
+background-color: #001EFF ;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+.footer h1{
+
+margin: 20;  
+color: #190500;
+
+
+}
+.footer h2{
+
+margin: 0;
+color:#190500 ;
+
+
+}
+.copy{
+
+display: flex;
+justify-content: center;
+color: #131F24;
+
+}

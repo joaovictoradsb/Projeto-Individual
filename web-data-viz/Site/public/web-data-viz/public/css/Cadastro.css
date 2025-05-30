@@ -1,0 +1,143 @@
+/* ------ Reset e base ------ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(../assets/2151955570.jpg) no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  padding: 10px 20px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li {
+  cursor: pointer;
+}
+
+.menu a {
+  color: white;
+}
+
+.botoes a {
+  margin-left: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.botaologin {
+  background-color: #160160e8;
+  color: #ffffff;
+}
+
+.botaocadastro {
+  background-color: #ffffffe8;
+  color: rgb(0, 0, 0);
+}
+
+
+/* ------ Cadastro Container ------ */
+.container-cadastro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  
+}
+
+/* ------ Card de Cadastro ------ */
+.card {
+  background-color: #160160e8;
+  padding: 40px 100px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Título */
+.card h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* Campo de Formulário */
+.card-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campo span {
+  display: block;
+  font-weight: 550;
+  margin-bottom: 6px;
+}
+
+.card-campo input {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  border-bottom: 2px solid #fff;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.card-campo input:focus {
+  outline: none;
+  border-bottom-color: #c0c0c0;
+}
+
+/* Botão */
+.confbotao {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.confbotao button {
+  background-color: #ffffff;
+  color: #3700ff;
+  font-weight: 600;
+  font-size: 16px;
+  width: 180px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .card {
+    padding: 30px 20px;
+  }
+}

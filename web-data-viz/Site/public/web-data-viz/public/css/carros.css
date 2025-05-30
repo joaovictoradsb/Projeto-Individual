@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  
+  background-color: #02188A;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  padding: 10px 20px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li {
+  cursor: pointer;
+}
+
+.menu a {
+  color: white;
+}
+
+.botoes a {
+  margin-left: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.botaologin {
+  background-color: #160160e8;
+  color: #ffffff;
+}
+
+.botaocadastro {
+  background-color: #160160e8;
+  color: white;
+}
+
+/* --------------------------------------------------- */
+
+.homecarros{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.configIMGcarros{
+
+display: flex;
+justify-content: center;
+height: 660px;
+padding: 130px;
+
+
+
+}.filme1carros{
+
+display: flex;
+justify-content: center;
+color: white;
+font-size: 45px;
+margin: 20px;
+
+
+}
+/* ------------------------------------------------- */
+
+
+.home{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.configIMG{
+
+display: flex;
+justify-content: center;
+height: 670px;
+
+
+
+}.filme1{
+
+display: flex;
+justify-content: center;
+color: white;
+font-size: 45px;
+margin: 20px;
+
+}.velozesefuriosos1{
+
+background-color: #031545;
+margin: 20px;
+border: solid;
+border-color: black;
+
+
+}.textogeral1{
+
+margin: 35px;
+
+
+}.textofilme1{
+
+font-size: 30px;
+
+
+}.imagem1{
+
+border: solid;
+border-color: gray;
+
+
+/* FOOTER ------------------------------------------ */
+
+
+}.footer{
+
+height: 215px;
+width: auto;
+background-color: #001EFF ;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+.footer h1{
+
+margin: 20;  
+color: #190500;
+
+
+}
+.footer h2{
+
+margin: 0;
+color:#190500 ;
+
+
+}
+.copy{
+
+display: flex;
+justify-content: center;
+color: #131F24;
+
+}

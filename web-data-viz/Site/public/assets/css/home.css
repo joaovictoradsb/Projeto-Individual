@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans+JP:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rochester&family=Six+Caps&family=Tagesschrift&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.home {
+    background-color: #F5F7FA;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    font-family: "Roboto";
+    flex-direction: column;
+}
+
+.titulo {
+    display: flex;
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #1e2e3a;
+}
+
+#logout{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    cursor: pointer;
+}
+
+.cards {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cima,
+.baixo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    height: 50%;
+    align-items: center;
+    gap: 50px;
+}
+
+.card {
+    perspective: 1000px;
+    width: 20%;
+    height: 85%;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+.transicao {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 30px;
+}
+
+.card.flip .transicao {
+    transform: rotateY(180deg);
+}
+
+.frente,
+.verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.frente {
+    z-index: 2;
+}
+
+.frente p {
+    color: white;
+    font-size: 25px;
+}
+
+.verso {
+    transform: rotateY(180deg);
+    gap: 15px;
+}
+
+.botao {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.imagem {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem img {
+    width: 50%;
+    height: 50%;
+}
+
+
+.card-premier {
+    background: #541C5D;
+}
+
+.card-premier .verso .botao {
+    background: #FFF;
+}
+
+.card-laliga {
+    background: #004AD0;
+}
+
+.card-laliga .verso .botao {
+    background: #FFF;
+}
+
+.card-bundesliga {
+    background: #000;
+}
+
+.card-bundesliga .verso .botao {
+    background: #FFF;
+    color: #000;
+}
+
+.card-serieA {
+    background: #B22E38;
+}
+
+.card-serieA .verso .botao {
+    background: #FFF;
+}
+
+.card-brasileirao {
+    background: #054CA0;
+}
+
+.card-brasileirao .verso .botao {
+    background: #FFF;
+}
+
+.card-champions {
+    background: #6594C0;
+}
+
+.card-champions .verso .botao {
+    background: #FFF;
+    color: #000;
+}
+
+.card-worldCup {
+    background: #56042C;
+}
+
+.card-worldCup .verso .botao {
+    background: #FFF;
+}
+
+.card-futebol {
+    background: #0D6938;
+}
+
+.card-futebol .verso .botao {
+    background: #FFF;
+}

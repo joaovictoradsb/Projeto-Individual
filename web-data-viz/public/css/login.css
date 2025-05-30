@@ -68,9 +68,9 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 120px;
+  padding-top: 51px;
   padding-bottom: 40px;
-  min-height: 90vh;
+  min-height: 80vh;
 }
 
 .card {
@@ -191,42 +191,4 @@ width: 100%;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
-
-/* ---------- Responsividade ---------- */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .botoes {
-    flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .botoes a {
-    margin: 5px 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  .container-login {
-    padding-top: 60px;
-  }
-
-  .card {
-    width: 90%;
-    padding: 30px 20px;
-  }
-
-  .card h2 {
-    font-size: 24px;
-  }
 }
