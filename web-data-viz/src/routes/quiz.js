@@ -4,7 +4,7 @@ var router = express.Router();
 var quizController = require("../controllers/quizController");
 
 
-router.post("/resultado/:idUsuario", function (req, res) {
+router.post("/resultado/", function (req, res) {
     quizController.cadastrarResultado(req, res);
 });
 
