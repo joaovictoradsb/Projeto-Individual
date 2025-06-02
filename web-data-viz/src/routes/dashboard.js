@@ -8,6 +8,8 @@ router.get("/buscarMaiorPontuacao/:idUsuario", function (req, res) {dashControll
 
 router.get("/buscarMenorPontuacao/:idUsuario", function (req, res) {dashController.buscarMenorPontuacao(req, res);});
 
+router.get("/buscarTentativasPorUsuario/:idUsuario", function (req, res) {dashController.buscarTentativasPorUsuario(req, res);});
+
 router.get("/buscarMediaPontuacao", function (req, res) {dashController.buscarMediaPontuacao(req, res);});
 
 module.exports = router;
