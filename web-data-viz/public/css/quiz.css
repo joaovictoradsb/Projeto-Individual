@@ -2,7 +2,7 @@
 /* The 4-point grid system: https://medium.com/@sainzkike/controlling-spacing-in-design-systems-multiple-spacing-9bf1afec87f */
 
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&family=Mohave:ital,wght@0,300..700;1,300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
     --primary-brand-color: #ED145B;
@@ -24,7 +24,7 @@
 body {
     color: var(--new-black);
     background-color: var(--new-white);
-    font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     background-image: url(../assets/pexels-pixabay-248747.jpg);
     background-size: cover;
@@ -94,7 +94,7 @@ gap: 20px;
 }.container{
 
 display: flex;
-height: 729px;
+height: 660px;
 justify-content: center;
 flex-direction: column;
 
@@ -114,7 +114,17 @@ border-radius: 45px;
 
 
 
-}#jogo{
+}#btnIniciarQuiz:hover{
+
+
+background-color: white;
+color: #02188A;
+cursor: pointer;
+
+}
+
+
+#jogo{
 
 background-color: black;
 color: white;
@@ -135,24 +145,64 @@ border: none;
 display: flex;
 flex-direction: row;
 justify-content: space-evenly;
-height: 100px;
+height: 80px;
 width: auto;
+}
+
+#btnSubmeter{
 
 
-}#btnSubmeter , #btnProx , #btnTentarNovamente{
+  background-color: #02188A;
+color: white;
+border: solid;
+cursor: pointer;
+
+}#btnSubmeter:hover{
+
+
+  background-color: #ffffff;
+color: #02188A;
+border: solid;
+cursor: pointer;
+
+}
+
+#btnProx{
 
 background-color: #02188A;
 color: white;
 border: solid;
+cursor: pointer;
+
+}#btnProx:hover{
+
+background-color: #ffffff;
+color: #02188A;
+border: solid;
+cursor: pointer;
+}
+
+#btnTentarNovamente{
+
+background-color: #02188A;
+color: white;
+border: solid;
+cursor: pointer;
+
+}#btnTentarNovamente:hover{
+
+background-color: #ffffff;
+color: #02188A;
+border: solid;
+cursor: pointer;
 
 
 }
 
-
 .quizz{
     display: flex;
     justify-content: center;
-    width: 94%;
+    width: 67%;
 
 
 }.janela {
@@ -176,8 +226,8 @@ border: solid;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #02188A;
-  background-color: #212124;
+  border-right: 3px solid #ffffff;
+  background-image: url(../assets/2151891741.jpg  );
 }
 
 .dash-right {
@@ -193,7 +243,9 @@ border: solid;
 }
 
 .header-left h1 {
-  color: #02188A;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 .hello {
@@ -203,9 +255,10 @@ border: solid;
 }
 
 .hello h3 {
-  color: #e3b062;
-  font-weight: 300;
+  color: #ffffff;
+  font-weight: bold;
   font-size: 1.2rem;
+
 }
 
 .hello h3 span {
@@ -235,16 +288,47 @@ color: #ffffff;
   padding: 2% 5%;
 }
 
+.btn-nav-white:hover{
+
+background-color: #02188A;
+
+}
+
 .btn-nav-white h3 {
   color: #000000;
   padding: 0;
   margin: 0;
+}
+.btn-nav-white h3:hover{
+
+color: white;
+
 }
 
 .btn-nav h3,
 .btn-logout h3 {
   margin: 0;
   padding: 0;
+}
+
+.btn-nav h3:hover,
+.btn-logout h3:hover{
+
+color: black;
+
+}
+
+.btn-nav:hover{
+
+background-color: white;
+
+
+}
+
+.btn-logout:hover{
+
+background-color: white;
+
 }
 
 .btn-logout {

@@ -54,9 +54,21 @@ a {
   color: #ffffff;
 }
 
+.botaologin:hover {
+  background-color: #ffffffe8;
+  color: #160160e8;
+}
+
 .botaocadastro {
   background-color: #ffffffe8;
-  color: rgb(0, 0, 0);
+  color: #160160e8;
+}
+
+.botaocadastro:hover{
+ 
+ background-color:#160160e8;
+ color: #ffffffe8;
+
 }
 
 

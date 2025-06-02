@@ -58,9 +58,21 @@ a {
   color: #ffffff;
 }
 
+.botaologin:hover {
+  background-color: #ffffffe8;
+  color: #160160e8;
+}
+
 .botaocadastro {
   background-color: #160160e8;
   color: white;
+}
+
+.botaocadastro:hover{
+ 
+ background-color:#ffffffe8;
+ color: #160160e8;
+
 }
 
 /* Seção principal - Home */

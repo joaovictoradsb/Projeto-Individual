@@ -10,7 +10,7 @@
 }
 
 body {
-  background: url(../assets/carro-de-anime-na-cidade.jpg) no-repeat center center fixed;
+  background: url(../assets/carro-de-anime-na-cidade\ \(3\).jpg) no-repeat center center fixed;
   background-size: cover;
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -54,13 +54,25 @@ a {
 }
 
 .botaologin {
-  background-color: #fff;
-  color: #111;
+  background-color: #ffffffe8;
+  color: #160160e8;
+}
+
+.botaologin:hover {
+  background-color: #160160e8;
+  color: #ffffffe8;
 }
 
 .botaocadastro {
   background-color: #160160e8;
   color: white;
+}
+
+.botaocadastro:hover{
+ 
+ background-color:#ffffffe8;
+ color: #160160e8;
+
 }
 
 /* ---------- Login ---------- */
