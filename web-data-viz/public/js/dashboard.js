@@ -5,7 +5,7 @@ const idUsuario = sessionStorage.getItem('ID_USUARIO');
 fetch(`/dashboard/buscarMaiorPontuacao/${idUsuario}`)
   .then(response => response.json())
   .then(data => {
-    const MaxPontuacao = data[0]?.['Pontuacao'] || 0;
+    const MaxPontuacao = data[0]?.['pontuacao'] || 0;
     document.getElementById('MaxPontuacao').innerText = parseFloat(MaxPontuacao);
   })
   .catch(error => console.error('Erro ao buscar média de pontuação:', error));
@@ -13,7 +13,7 @@ fetch(`/dashboard/buscarMaiorPontuacao/${idUsuario}`)
   fetch(`/dashboard/buscarMenorPontuacao/${idUsuario}`)
   .then(response => response.json())
   .then(data => {
-    const minValor = data[0]?.['Erradas'] || 0;
+    const minValor = data[0]?.['erradas'] || 0;
     document.getElementById('minValor').innerText = parseFloat(minValor)
   })
   .catch(error => console.error('Erro ao buscar menor pontuação:', error));
@@ -46,7 +46,7 @@ fetch(`/dashboard/buscarMaiorPontuacao/${idUsuario}`)
 fetch(`/dashboard/buscarMediaPontuacao`)
   .then(res => res.json())
   .then(data => {
-    const media = data.Média ? parseFloat(data.Média).toFixed(2) : 0;
+    const media = data.média ? parseFloat(data.média).toFixed(2) : 0;
     const porcentagem = (media / 20 * 100).toFixed(2);
 
    
@@ -87,13 +87,13 @@ fetch(`/dashboard/buscarMediaPontuacao`)
       const linha = document.createElement('tr');
 
       const acertos = document.createElement('td');
-      acertos.textContent = tentativa.Pontuacao;
+      acertos.textContent = tentativa.pontuacao;
 
       const erros = document.createElement('td');
-      erros.textContent = tentativa.Erradas;
+      erros.textContent = tentativa.erradas;
 
       const data = document.createElement('td');
-      const dataFormatada = new Date(tentativa.dtPontuacao).toLocaleString('pt-BR', {
+      const dataFormatada = new Date(tentativa.dtpontuacao).toLocaleString('pt-BR', {
         day: '2-digit', month: '2-digit', year: 'numeric',
         hour: '2-digit', minute: '2-digit'
       });

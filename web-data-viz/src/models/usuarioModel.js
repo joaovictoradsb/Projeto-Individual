@@ -7,7 +7,7 @@ function autenticar(email, senha) {
     senha
   );
   var instrucaoSql = `
-        SELECT idUsuario, nome, email FROM usuario WHERE email = '${email}' AND senha = '${senha}';
+        SELECT idusuario, nome, email FROM usuario WHERE email = '${email}' AND senha = '${senha}';
     `;
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
@@ -32,7 +32,7 @@ function cadastrar(nome, email, senha) {
 }
 
 function buscarEmailPorId(email) {
-  var instrucaoSql = `SELECT * FROM Usuario WHERE email = '${email}'`;
+  var instrucaoSql = `SELECT * FROM usuario WHERE email = '${email}'`;
 
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
