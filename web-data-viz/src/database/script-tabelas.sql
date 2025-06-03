@@ -61,3 +61,11 @@ FROM Resultado;
 
 
 SELECT * FROM Usuario;	
+
+SELECT AVG(pontuacao) AS 'Média certo',
+ avg(erradas) as 'Media erradas'
+    FROM resultado;
+    
+    -- Selecionar todos as datas, pontuacao do usuario com fkUsuario
+    
+    select Pontuacao, Erradas, dtPontuacao from resultado where fkUsuario = '2' order by dtPontuacao asc;
